@@ -2,510 +2,534 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOPMYKINO</title>
-  <!--Главный css-->
-  <link rel="stylesheet" href="./assets/css/MAIN.css" />
-  <!--Шапка css-->
-  <link rel="stylesheet" href="./assets/css/header.css" />
-  <!--Основной css-->
-  <link rel="stylesheet" href="./assets/css/index.css" />
-  <!--Подвал css-->
-  <link rel="stylesheet" href="./assets/css/footer.css" />
-  <!--Анимация-->
-  <!--<link rel="stylesheet" href="../assets/css/indexanimation.css">-->
-  <style>
-    .container {
-      height: fit-content;
-      display: inline-flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      touch-action: pan-y;
-      user-select: none;
-      cursor: grab;
-      margin: 2% 0;
-    }
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOPMYKINO</title>
+    <!--Главный css-->
+    <link rel="stylesheet" href="./assets/css/MAIN.css" />
+    <!--Шапка css-->
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <!--Основной css-->
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <!--Подвал css-->
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <!--Анимация-->
+    <!--<link rel="stylesheet" href="../assets/css/indexanimation.css">-->
+    <style>
+        .container {
+            height: fit-content;
+            display: inline-flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            touch-action: pan-y;
+            user-select: none;
+            cursor: grab;
+            margin: 2% 0;
+        }
 
-    .item {
-      width: fit-content;
-      height: fit-content;
-      padding-left: 4.43vw;
-      opacity: 1;
-      transition: opacity 2s;
+        .item {
+            width: fit-content;
+            height: fit-content;
+            padding-left: 4.43vw;
+            opacity: 1;
+            transition: opacity 2s;
 
-      /* > div {
+            /* > div {
           width: 100%;
           height: 100%;
           background-size: cover;
         } */
-    }
+        }
 
-    .item img {
-      width: 19.5vw;
-      height: 10.969vw;
-    }
+        .item img {
+            width: 19.5vw;
+            height: 10.969vw;
+        }
 
-    .item a {
-      font-size: 1.25vw;
-      width: 100%;
-      height: fit-content;
-    }
+        .item a {
+            font-size: 1.25vw;
+            width: 100%;
+            height: fit-content;
+        }
 
-    /* ноутбук */
-    @media screen and (width <=1024px) {
-      .item img {
-        width: 29.25vw;
-        height: 16.453vw;
-      }
+        /* ноутбук */
+        @media screen and (width <=1024px) {
+            .item img {
+                width: 29.25vw;
+                height: 16.453vw;
+            }
 
-      .item a {
-        font-size: 1.86vw;
-      }
-    }
+            .item a {
+                font-size: 1.86vw;
+            }
+        }
 
-    /* планшет */
-    @media screen and (width <=768px) {
-      .item img {
-        width: 39vw;
-        height: 21.938vw;
-      }
+        /* планшет */
+        @media screen and (width <=768px) {
+            .item img {
+                width: 39vw;
+                height: 21.938vw;
+            }
 
-      .item a {
-        font-size: 2.47vw;
-      }
-    }
-  </style>
+            .item a {
+                font-size: 2.47vw;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Анимация html-->
-  <!-- <div class="start-black"></div>
+    <!-- Анимация html-->
+    <!-- <div class="start-black"></div>
     <div class="start-button">
       <img width="100" src="../assets/img/pusk1.svg" />
     </div> -->
-  <!--Начало сайта-->
-  <div>
-    <!--Начало шапки-->
-    <header>
-      <div class="header-1">
-        <a class="logo" href="index.html">TOPMYKINO</a>
-      </div>
-      <div class="header-2">
-        <a href="./pages/movies.html">Фильмы</a>
-        <a href="./pages/serials.html">Сериалы</a>
-      </div>
-      <div class="header-3">
-        <input type="text" placeholder="Поиск" />
-      </div>
-      <div class="header-4">
-        <a href="./pages/authorization.html">Профиль</a>
-      </div>
-      <div class="header-5">
-        <img src="./assets/img/menu.svg" />
-      </div>
-    </header>
-    <!--Конец шапки-->
-    <hr />
-    <!--Начало рекламного блока-->
-    <div class="div1">
-      <div class="div1-block1">
-        <span>Фильмы и сериалы</span>
-        <span class="span2">в одной подписке</span>
-        <span class="textorange">7 дней беслатно</span>
-        <button style="width: fit-content" class="btnSubscription">
-          Подключить подписку
-        </button>
-        <p>Отключить можно в любой момент</p>
-      </div>
-      <div class="div1-block2">
-        <p>
-          <img width="100%" src="./assets/img/angrybirds2moviefull.jpg" />
-        </p>
-      </div>
-    </div>
-    <!--Конец рекламного блока-->
-    <!--Начало списка фильмов-->
-    <div class="div2">
-      <p class="div2p">Фильмы для вас</p>
-      <div id="container" class="container"></div>
-      <!-- <div class="div2-flex">
+    <!--Начало сайта-->
+    <div>
+        <!--Начало шапки-->
+        <header>
+            <div class="header-1">
+                <a class="logo" href="index.html">TOPMYKINO</a>
+            </div>
+            <div class="header-2">
+                <a href="./pages/movies.html">Фильмы</a>
+                <a href="./pages/serials.html">Сериалы</a>
+            </div>
+            <div class="header-3">
+                <input type="text" placeholder="Поиск" />
+            </div>
+            <div class="header-4">
+                <a href="./pages/authorization.html">Профиль</a>
+            </div>
+            <div class="header-5">
+                <img src="./assets/img/menu.svg" />
+            </div>
+        </header>
+        <!--Конец шапки-->
+        <hr />
+        <!--Начало рекламного блока-->
+        <div class="div1">
+            <div class="div1-block1">
+                <span>Фильмы и сериалы</span>
+                <span class="span2">в одной подписке</span>
+                <span class="textorange">7 дней беслатно</span>
+                <button style="width: fit-content" class="btnSubscription">
+                    Подключить подписку
+                </button>
+                <p>Отключить можно в любой момент</p>
+            </div>
+            <div class="div1-block2">
+                <p>
+                    <img width="100%" src="./assets/img/angrybirds2moviefull.jpg" />
+                </p>
+            </div>
+        </div>
+        <!--Конец рекламного блока-->
+        <!--Начало списка фильмов-->
+        <div class="div2">
+            <p class="div2p">Фильмы для вас</p>
+            <div id="container" class="container"></div>
+            <!-- <div class="div2-flex">
         <a href="./pages/thismovie.html"><img src="./assets/img/angrybirds2movie1_1.jpg"></a>
         <a href="./pages/thismovie.html"><img src="./assets/img/maingeroi(2560-1440).jpg"></a>
         <a href="./pages/thismovie.html"><img src="./assets/img/angrybirds2movie1_1.jpg"></a>
         <a href="./pages/thismovie.html"><img src="./assets/img/angrybirds2movie1_1.jpg"></a>
       </div> -->
-    </div>
-    <!--Конец списка фильмов-->
-  </div>
-  <div>
-    <!--Начало подвала-->
-    <hr />
-    <footer>
-      <div class="footer-1">
-        <p class="footerP">Техническая поддержка</p>
-        <p class="footerPgray1">
-          Мы с удовольствием ответим на интересующие тебя вопросы
-        </p>
-        <p class="footerPgray">topmykino@mail.ru</p>
-        <a href="./pages/technicalSupport.html" class="btnWrite">Написать</a>
-      </div>
-      <div class="footer-2">
-        <p class="footerP"><a href="#">Пользовательское соглашение</a></p>
-        <p class="footerP"><a href="#">Политика конфиденциальности</a></p>
-      </div>
-      <div class="footer-3">
-        <p class="footerP">
-          <a href="./pages/company.html">О компании</a>
-        </p>
-      </div>
-      <div class="footer-4">
-        <p class="footerP">Социальные сети</p>
-        <div class="socialNetwork">
-          <a href="https://vk.com/"><img src="./assets/img/VK.png" /></a>
-          <a href="https://www.youtube.com/"><img src="./assets/img/YT.png" /></a>
-          <a href="https://web.telegram.org/"><img src="./assets/img/Teleg.png" /></a>
-          <a href="https://vk.com/"><img src="./assets/img/VK.png" /></a>
         </div>
-      </div>
-    </footer>
-    <!--Конец подвала-->
-  </div>
+        <!--Конец списка фильмов-->
+    </div>
+    <div>
+        <!--Начало подвала-->
+        <hr />
+        <footer>
+            <div class="footer-1">
+                <p class="footerP">Техническая поддержка</p>
+                <p class="footerPgray1">
+                    Мы с удовольствием ответим на интересующие тебя вопросы
+                </p>
+                <p class="footerPgray">topmykino@mail.ru</p>
+                <a href="./pages/technicalSupport.html" class="btnWrite">Написать</a>
+            </div>
+            <div class="footer-2">
+                <p class="footerP"><a href="#">Пользовательское соглашение</a></p>
+                <p class="footerP"><a href="#">Политика конфиденциальности</a></p>
+            </div>
+            <div class="footer-3">
+                <p class="footerP">
+                    <a href="./pages/company.html">О компании</a>
+                </p>
+            </div>
+            <div class="footer-4">
+                <p class="footerP">Социальные сети</p>
+                <div class="socialNetwork">
+                    <a href="https://vk.com/"><img src="./assets/img/VK.png" /></a>
+                    <a href="https://www.youtube.com/"><img src="./assets/img/YT.png" /></a>
+                    <a href="https://web.telegram.org/"><img src="./assets/img/Teleg.png" /></a>
+                    <a href="https://vk.com/"><img src="./assets/img/VK.png" /></a>
+                </div>
+            </div>
+        </footer>
+        <!--Конец подвала-->
+    </div>
 </body>
 <script>
-  let serials = [
-    {
-      id: 1,
-      name: "Кухня",
-      populars: 1,
-      views: 10000000,
-      rating: 8.6,
-      src: "kitchen.jpg",
-    },
-    {
-      id: 2,
-      name: "Рик и Морти",
-      populars: 2,
-      views: 12000000,
-      rating: 9,
-      src: "RickAndMorty(3_4).jpg",
-    },
-    {
-      id: 3,
-      name: "Слово пацана. Кровь на асфальте",
-      populars: 3,
-      views: 7000000,
-      rating: 8.3,
-      src: `Boy'sWord.jpg`,
-    },
-    {
-      id: 4,
-      name: "Хороший доктор",
-      populars: 4,
-      views: 6000000,
-      rating: 8.0,
-      src: "GoodDoctor.jpg",
-    },
-    {
-      id: 5,
-      name: "Мандалорец",
-      populars: 5,
-      views: 5000000,
-      rating: 8.1,
-      src: "Mandalorian.jpg",
-    },
-    {
-      id: 6,
-      name: "Локи",
-      populars: 6,
-      views: 5500000,
-      rating: 7.7,
-      src: "Loki.jpg",
-    },
-    {
-      id: 7,
-      name: "Вампиры средней полосы",
-      populars: 7,
-      views: 7000000,
-      rating: 8.3,
-      src: "Vampire.jpg",
-    },
-    {
-      id: 8,
-      name: "Пищеблок",
-      populars: 8,
-      views: 7700000,
-      rating: 7.4,
-      src: "NutritionUnit.jpg",
-    },
-  ];
-  let movies = [
-    {
-      id: 1,
-      srcfull: "beekeeper1.png",
-      name: "BEEKEEPER",
-      populars: 1,
-      views: 1000000,
-      rating: 7,
-      src: "beekeeper.png",
-    },
-    {
-      id: 2,
-      srcfull: "maingeroi.jpg",
-      name: "Главный герой",
-      populars: 3,
-      views: 2800000,
-      rating: 8,
-      src: "maingeroi(600-800).jpg",
-    },
-    {
-      id: 3,
-      srcfull: "angrybirds2moviefull.jpg",
-      name: "Angry Birds 2",
-      populars: 4,
-      views: 4000000,
-      rating: 7.4,
-      src: "angrybirds2(3_4).png",
-    },
-    {
-      id: 4,
-      srcfull: "elki5fullhd.jpg",
-      name: "Ёлки 5",
-      populars: 6,
-      views: 1500000,
-      rating: 6,
-      src: "elki5.png",
-    },
-    {
-      id: 5,
-      srcfull: "geminifull.jpg",
-      name: "GEMINI",
-      populars: 5,
-      views: 700000,
-      rating: 3.2,
-      src: "gemini.jpg",
-    },
-    {
-      id: 6,
-      srcfull: "sing2full.jpg",
-      name: "Зверопой 2",
-      populars: 7,
-      views: 850000,
-      rating: 8.3,
-      src: "sing2.jpg",
-    },
-    {
-      id: 7,
-      srcfull: "ILegendfull.jpg",
-      name: "Я Легенда",
-      populars: 8,
-      views: 950000,
-      rating: 7.9,
-      src: "IAmLegend.jpg",
-    },
-    {
-      id: 8,
-      srcfull: "kungfupanda4full.jpg",
-      name: "Кунг Фу Панда 4",
-      populars: 9,
-      views: 2000000,
-      rating: 6.7,
-      src: "KyngFuPanda4(3_4).jpg",
-    },
-    {
-      id: 9,
-      srcfull: "barbiefull.jpg",
-      name: "Барби",
-      populars: 10,
-      views: 7000000,
-      rating: 6.6,
-      src: "Barbie.jpg",
-    },
-    {
-      id: 10,
-      srcfull: "cheburashkafull.jpg",
-      name: "Чебурашка",
-      populars: 11,
-      views: 5000000,
-      rating: 7.3,
-      src: "Cheburaska.jpg",
-    },
-  ];
+    let serials = [
+        {
+            id: 1,
+            name: "Кухня",
+            populars: 1,
+            views: 10000000,
+            rating: 8.6,
+            src: "kitchen.jpg",
+        },
+        {
+            id: 2,
+            name: "Рик и Морти",
+            populars: 2,
+            views: 12000000,
+            rating: 9,
+            src: "RickAndMorty(3_4).jpg",
+        },
+        {
+            id: 3,
+            name: "Слово пацана. Кровь на асфальте",
+            populars: 3,
+            views: 7000000,
+            rating: 8.3,
+            src: `Boy'sWord.jpg`,
+        },
+        {
+            id: 4,
+            name: "Хороший доктор",
+            populars: 4,
+            views: 6000000,
+            rating: 8.0,
+            src: "GoodDoctor.jpg",
+        },
+        {
+            id: 5,
+            name: "Мандалорец",
+            populars: 5,
+            views: 5000000,
+            rating: 8.1,
+            src: "Mandalorian.jpg",
+        },
+        {
+            id: 6,
+            name: "Локи",
+            populars: 6,
+            views: 5500000,
+            rating: 7.7,
+            src: "Loki.jpg",
+        },
+        {
+            id: 7,
+            name: "Вампиры средней полосы",
+            populars: 7,
+            views: 7000000,
+            rating: 8.3,
+            src: "Vampire.jpg",
+        },
+        {
+            id: 8,
+            name: "Пищеблок",
+            populars: 8,
+            views: 7700000,
+            rating: 7.4,
+            src: "NutritionUnit.jpg",
+        },
+    ];
+    let movies = [
+        {
+            id: 1,
+            srcfull: "beekeeper1.png",
+            name: "BEEKEEPER",
+            populars: 1,
+            views: 1000000,
+            rating: 7,
+            src: "beekeeper.png",
+        },
+        {
+            id: 2,
+            srcfull: "maingeroi.jpg",
+            name: "Главный герой",
+            populars: 3,
+            views: 2800000,
+            rating: 8,
+            src: "maingeroi(600-800).jpg",
+        },
+        {
+            id: 3,
+            srcfull: "angrybirds2moviefull.jpg",
+            name: "Angry Birds 2",
+            populars: 4,
+            views: 4000000,
+            rating: 7.4,
+            src: "angrybirds2(3_4).png",
+        },
+        {
+            id: 4,
+            srcfull: "elki5fullhd.jpg",
+            name: "Ёлки 5",
+            populars: 6,
+            views: 1500000,
+            rating: 6,
+            src: "elki5.png",
+        },
+        {
+            id: 5,
+            srcfull: "geminifull.jpg",
+            name: "GEMINI",
+            populars: 5,
+            views: 700000,
+            rating: 3.2,
+            src: "gemini.jpg",
+        },
+        {
+            id: 6,
+            srcfull: "sing2full.jpg",
+            name: "Зверопой 2",
+            populars: 7,
+            views: 850000,
+            rating: 8.3,
+            src: "sing2.jpg",
+        },
+        {
+            id: 7,
+            srcfull: "ILegendfull.jpg",
+            name: "Я Легенда",
+            populars: 8,
+            views: 950000,
+            rating: 7.9,
+            src: "IAmLegend.jpg",
+        },
+        {
+            id: 8,
+            srcfull: "kungfupanda4full.jpg",
+            name: "Кунг Фу Панда 4",
+            populars: 9,
+            views: 2000000,
+            rating: 6.7,
+            src: "KyngFuPanda4(3_4).jpg",
+        },
+        {
+            id: 9,
+            srcfull: "barbiefull.jpg",
+            name: "Барби",
+            populars: 10,
+            views: 7000000,
+            rating: 6.6,
+            src: "Barbie.jpg",
+        },
+        {
+            id: 10,
+            srcfull: "cheburashkafull.jpg",
+            name: "Чебурашка",
+            populars: 11,
+            views: 5000000,
+            rating: 7.3,
+            src: "Cheburaska.jpg",
+        },
+    ];
 
-  const containerMass = 5;
-  const mouseMass = 10;
+    const containerMass = 5;
+    const mouseMass = 10;
 
-  let imageHasLoaded = false;
+    let imageHasLoaded = false;
 
-  let mouseX = 0;
-  let prevMouseX = 0;
-  let mouseXOnDown = null;
-  let isMouseDown = false;
+    let mouseX = 0;
+    let prevMouseX = 0;
+    let mouseXOnDown = null;
+    let isMouseDown = false;
 
-  let containerPosition = 0;
-  let mouseVelocity = 0;
-  let containerVelocity = 0;
+    let containerPosition = 0;
+    let mouseVelocity = 0;
+    let containerVelocity = 0;
 
-  let imagesElement = null;
+    let imagesElement = null;
 
-  const createBeltScroller = (container, images) => {
-    imageHasLoaded = true;
-    const beltDOMItems = images.map((image, index) => {
-      const element = document.createElement("div");
-      element.style.position = "relative";
-      element.classList.add("item");
-      const elementImage = document.createElement("img");
-      elementImage.style.height = "100%";
-      for (let i = 0; i < movies.length; i++) {
-        if (image == movies[i].name) {
-          elementImage.src = `./assets/img/${movies[i].srcfull}`;
-          element.appendChild(elementImage);
-          const elementScore = document.createElement("span");
-          elementScore.style.position = "absolute";
-          elementScore.style.top = 0;
-          elementScore.style.right = 0;
-          elementScore.style.padding = "0 1%";
-          elementScore.style.margin = "1%";
-          elementScore.style.borderRadius = "3px";
-          if (image == movies[i].name) {
-            elementScore.innerHTML = movies[i].rating;
-            if (movies[i].rating >= 6.66) {
-              elementScore.style.background = "green";
-            } else if (movies[i].rating >= 3.33) {
-              elementScore.style.background = "orange";
-            } else {
-              elementScore.style.background = "red";
+    const createBeltScroller = (container, images) => {
+        imageHasLoaded = true;
+        const beltDOMItems = images.map((image, index) => {
+            const element = document.createElement("div");
+            element.style.position = "relative";
+            element.classList.add("item");
+            const elementImage = document.createElement("img");
+            elementImage.style.height = "100%";
+            for (let i = 0; i < movies.length; i++) {
+                if (image == movies[i].name) {
+                    elementImage.src = `./assets/img/${movies[i].srcfull}`;
+                    element.appendChild(elementImage);
+                    const elementScore = document.createElement("span");
+                    elementScore.style.position = "absolute";
+                    elementScore.style.top = 0;
+                    elementScore.style.right = 0;
+                    elementScore.style.padding = "0 1%";
+                    elementScore.style.margin = "1%";
+                    elementScore.style.borderRadius = "3px";
+                    if (image == movies[i].name) {
+                        elementScore.innerHTML = movies[i].rating;
+                        if (movies[i].rating >= 6.66) {
+                            elementScore.style.background = "green";
+                        } else if (movies[i].rating >= 3.33) {
+                            elementScore.style.background = "orange";
+                        } else {
+                            elementScore.style.background = "red";
+                        }
+                    }
+                    element.appendChild(elementScore);
+                    const elementA = document.createElement("a");
+                    if (image == movies[i].name) {
+                        elementA.innerHTML = movies[i].name;
+                    }
+                    elementA.href = "./pages/thismovie.html";
+                    element.appendChild(elementA);
+                    return element;
+                }
             }
-          }
-          element.appendChild(elementScore);
-          const elementA = document.createElement("a");
-          if (image == movies[i].name) {
-            elementA.innerHTML = movies[i].name;
-          }
-          elementA.href = "./pages/thismovie.html";
-          element.appendChild(elementA);
-          return element;
-        }
-      }
-    });
-    imagesElement = beltDOMItems.map((element) => element);
-    beltDOMItems.forEach((beltDOMItem) => {
-      container.appendChild(beltDOMItem);
-    });
-  };
-  const container = document.querySelector(".container");
+        });
+        imagesElement = beltDOMItems.map((element) => element);
+        beltDOMItems.forEach((beltDOMItem) => {
+            container.appendChild(beltDOMItem);
+        });
+    };
+    const container = document.querySelector(".container");
 
-  createBeltScroller(container, [
-    "BEEKEEPER",
-    "Главный герой",
-    "Angry Birds 2",
-    "Ёлки 5",
-    "GEMINI",
-    "Зверопой 2",
-    "Я Легенда",
-    "Кунг Фу Панда 4",
-    "Барби",
-    "Чебурашка",
-  ]);
+    createBeltScroller(container, [
+        "BEEKEEPER",
+        "Главный герой",
+        "Angry Birds 2",
+        "Ёлки 5",
+        "GEMINI",
+        "Зверопой 2",
+        "Я Легенда",
+        "Кунг Фу Панда 4",
+        "Барби",
+        "Чебурашка",
+    ]);
 
-  const onMouseUpdate = (event) => { mouseX = event.pageX; }; // Перемещение мыши
-  const onMouseDown = () => { isMouseDown = true; }; // Нажатие клавиши мыши
-  const onMouseUp = () => { isMouseDown = false; }; // Поднятие клавиши мыши
+    // Mouse event handlers
+    const onMouseUpdate = (event) => { mouseX = event.pageX; }; // Mouse movement
+    const onMouseDown = () => { isMouseDown = true; }; // Mouse button press
+    const onMouseUp = () => { isMouseDown = false; }; // Mouse button release
 
-  document.addEventListener("mousemove", onMouseUpdate, false);
-  document.getElementById("container").addEventListener("mousedown", onMouseDown);
-  document.addEventListener("mouseup", onMouseUp);
+    // Touch event handler
+    function touchHandler(event) {
+        let touch = event.changedTouches[0];
+        let simulatedEvent = document.createEvent("MouseEvent");
 
-  const calculateMouseMomentum = () => {
-    if (isMouseDown) {
-      if (mouseXOnDown == null) {
-        mouseXOnDown = mouseX;
-        containerVelocity = 0;
-      }
-      const distance = mouseX - mouseXOnDown;
-      mouseVelocity = mouseX - prevMouseX;
-    } else {
-      if (mouseXOnDown != null) {
-        containerVelocity =
-          ((2 * mouseMass) / (mouseMass + containerMass)) * mouseVelocity +
-          ((containerMass - mouseMass) / (mouseMass + containerMass)) *
-          containerVelocity;
+        simulatedEvent.initMouseEvent({
+            touchstart: "mousedown",
+            touchmove: "mousemove",
+            touchend: "mouseup"
+        }[event.type], true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
 
-        const maxVelocity = 60;
-
-        if (containerVelocity > maxVelocity) {
-          containerVelocity = maxVelocity;
-        } else if (containerVelocity < -maxVelocity) {
-          containerVelocity = -maxVelocity;
-        }
-
-        mouseXOnDown = null;
-        mouseVelocity = 0;
-      }
+        touch.target.dispatchEvent(simulatedEvent);
     }
 
-    prevMouseX = mouseX;
-  };
+    // Add mouse event listeners
+    document.addEventListener("mousemove", onMouseUpdate, false);
+    document.getElementById("container").addEventListener("mousedown", onMouseDown);
+    document.addEventListener("mouseup", onMouseUp);
 
-  const updateContainer = () => {
-    const boundRight = -container.offsetWidth + window.innerWidth - 85;
+    // Add touch event listeners
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
 
-    const isOutBound =
-      containerPosition > 0 || containerPosition < boundRight;
 
-    if (!isMouseDown) {
-      const mu = 0.04;
-      const g = 10;
-      const flictionForce = containerMass * g * mu;
-      const flictionA = flictionForce / containerMass;
 
-      if (containerVelocity > 0) {
-        containerVelocity -= flictionA;
-        if (containerVelocity < 0) {
-          containerVelocity = 0;
+    const calculateMouseMomentum = () => {
+        if (isMouseDown) {
+            if (mouseXOnDown == null) {
+                mouseXOnDown = mouseX;
+                containerVelocity = 0;
+            }
+            const distance = mouseX - mouseXOnDown;
+            mouseVelocity = mouseX - prevMouseX;
+        } else {
+            if (mouseXOnDown != null) {
+                containerVelocity =
+                    ((2 * mouseMass) / (mouseMass + containerMass)) * mouseVelocity +
+                    ((containerMass - mouseMass) / (mouseMass + containerMass)) *
+                    containerVelocity;
+
+                const maxVelocity = 60;
+
+                if (containerVelocity > maxVelocity) {
+                    containerVelocity = maxVelocity;
+                } else if (containerVelocity < -maxVelocity) {
+                    containerVelocity = -maxVelocity;
+                }
+
+                mouseXOnDown = null;
+                mouseVelocity = 0;
+            }
         }
-      } else if (containerVelocity < 0) {
-        containerVelocity += flictionA;
-        if (containerVelocity > 0) {
-          containerVelocity = 0;
+
+        prevMouseX = mouseX;
+    };
+
+    const updateContainer = () => {
+        const boundRight = -container.offsetWidth + window.innerWidth - 85;
+
+        const isOutBound =
+            containerPosition > 0 || containerPosition < boundRight;
+
+        if (!isMouseDown) {
+            const mu = 0.04;
+            const g = 10;
+            const flictionForce = containerMass * g * mu;
+            const flictionA = flictionForce / containerMass;
+
+            if (containerVelocity > 0) {
+                containerVelocity -= flictionA;
+                if (containerVelocity < 0) {
+                    containerVelocity = 0;
+                }
+            } else if (containerVelocity < 0) {
+                containerVelocity += flictionA;
+                if (containerVelocity > 0) {
+                    containerVelocity = 0;
+                }
+            }
+
+            if (isOutBound) {
+                const k = 0.01;
+                const restLength = containerPosition > 0 ? 0 : boundRight;
+                const currentLength = containerPosition;
+                const dragForce = 1 * k * (restLength - currentLength);
+
+                const dragForceA = dragForce / containerMass;
+                containerVelocity += dragForce;
+
+                const nextPosition = containerPosition + containerVelocity;
+
+                if (containerPosition < boundRight && nextPosition > boundRight) {
+                    containerVelocity = 0;
+                    containerPosition = boundRight;
+                } else if (containerPosition > 0 && nextPosition < 0) {
+                    containerVelocity = 0;
+                    containerPosition = 0;
+                }
+            }
         }
-      }
 
-      if (isOutBound) {
-        const k = 0.01;
-        const restLength = containerPosition > 0 ? 0 : boundRight;
-        const currentLength = containerPosition;
-        const dragForce = 1 * k * (restLength - currentLength);
+        containerPosition = containerPosition + containerVelocity + (isOutBound ? mouseVelocity / 2 : mouseVelocity);
+        container.style.transform = `translate(${containerPosition}px)`;
+    };
 
-        const dragForceA = dragForce / containerMass;
-        containerVelocity += dragForce;
+    const loop = () => {
+        calculateMouseMomentum();
+        updateContainer();
+        window.requestAnimationFrame(() => {
+            loop();
+        });
+    };
 
-        const nextPosition = containerPosition + containerVelocity;
-
-        if (containerPosition < boundRight && nextPosition > boundRight) {
-          containerVelocity = 0;
-          containerPosition = boundRight;
-        } else if (containerPosition > 0 && nextPosition < 0) {
-          containerVelocity = 0;
-          containerPosition = 0;
-        }
-      }
-    }
-
-    containerPosition = containerPosition + containerVelocity + (isOutBound ? mouseVelocity / 2 : mouseVelocity);
-    container.style.transform = `translate(${containerPosition}px)`;
-  };
-
-  const loop = () => {
-    calculateMouseMomentum();
-    updateContainer();
-    window.requestAnimationFrame(() => {
-      loop();
-    });
-  };
-
-  loop();
+    loop();
 </script>
 
 </html>
