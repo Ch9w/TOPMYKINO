@@ -1,0 +1,124 @@
+/*Контнет страницы*/
+.divProfile {
+    width: 87.6%;
+    margin: 0 auto;
+    margin-top: 0.5%;
+    color: white;
+}
+
+.divProfile1 {
+    display: flex;
+}
+
+.divProfile1_1 {
+    width: 50%;
+}
+
+.divProfile1_2 {
+    text-align: right;
+    width: 50%;
+}
+
+.divProfile1_1_Profile {
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+.divProfile1_1_Name {
+    font-size: 1.67vw;
+    font-weight: bold;
+    margin-bottom: 2.1%;
+}
+
+.divProfile1_1_Email {
+    font-size: 1.67vw;
+    font-weight: bold;
+    margin-bottom: 2.6%;
+}
+
+.divProfile1_1_Reg {
+    font-size: 1.67vw;
+    font-weight: bold;
+    margin-bottom: 2.6%;
+}
+.divProfile1_1_Subscribe {
+    font-size: 1.67vw;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+.divProfile1_1_Love {
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin-bottom: 2.8%;
+    display: flex;
+    align-items: center;
+}
+
+.divProfile1_1_Love img {
+    width: 2.60vw;
+    height: 2.60vw;
+}
+
+.btnChangeProfile {
+    border-radius: 0.52vw;
+    font-size: 1.25vw;
+    border: 0px;
+    background-color: rgb(100, 100, 100);
+    color: white;
+    font-weight: bold;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+    box-sizing: border-box;
+}
+
+/*Список фильмов*/
+.archive {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5.21vw;
+    grid-auto-flow: row dense;
+    margin-bottom: 2.08vw;
+}
+
+.article {
+    width: 15.63vw;
+    height: 20.83vw;
+}
+
+.article1 {
+    justify-self: start;
+}
+
+.article4 {
+    justify-self: end;
+}
+
+.article img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(100%);
+    transition: 0.5s;
+
+}
+
+.article img:hover {
+    filter: brightness(50%);
+    transition: 0.5s;
+}
+@media screen and (width <=768px) {
+    .archive {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .article {
+        width: calc(15.63vw*2);
+        height: calc(20.83vw*2);
+        justify-self: center;
+    }
+    
+}
